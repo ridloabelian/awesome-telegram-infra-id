@@ -25,7 +25,7 @@ Dibangun untuk solopreneur & developer Indonesia, di mana Telegram sudah jadi na
 
 > 🗺️ **Bagian dari seri [Stack Nol Rupiah](https://github.com/ridloabelian/awesome-rp0-id)** — peta lengkap bootstrap gratisan Rp 0 untuk indie hacker Indonesia.
 
-> 🔗 **Seri saudara:** [**Kitab Cloudflare**](https://github.com/ridloabelian/awesome-cloudflare-id) (edge/web) · [**Kitab Google**](https://github.com/ridloabelian/awesome-google-free-id) (automasi bisnis) · [**Kitab Supabase**](https://github.com/ridloabelian/awesome-supabase-id) (database/auth). **Telegram melengkapi semuanya sebagai lapisan komunikasi, notifikasi, & storage gratis.**
+> 🔗 **Seri saudara:** [**Kitab Cloudflare**](https://github.com/ridloabelian/awesome-cloudflare-id) (edge/web) · [**Kitab Google**](https://github.com/ridloabelian/awesome-google-free-id) (automasi bisnis) · [**Kitab Supabase**](https://github.com/ridloabelian/awesome-supabase-id) (database/auth) · [**Kitab Oracle Cloud**](https://github.com/ridloabelian/awesome-oracle-free-id) (compute/self-hosting). **Telegram melengkapi semuanya sebagai lapisan komunikasi, notifikasi, Mini Apps, dan pengiriman file non-kritis.**
 
 Telegram Bot API dapat digunakan gratis dengan **rate limit platform**, sementara file Telegram dapat membantu penyimpanan/pengiriman file non-kritis. Kombinasi ini berguna untuk webhook, CRM ringan, publikasi channel, dan notifikasi — tetapi bukan pengganti database atau object storage produksi. Cocok banget untuk pasar Indonesia yang aktivitas bisnisnya banyak berpusat di chat.
 
