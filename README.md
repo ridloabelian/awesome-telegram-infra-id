@@ -5,10 +5,10 @@
 <h1 align="center">Kitab Telegram ✈️ 🇮🇩<br><sub>(Infra Nol Rupiah)</sub></h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1000&color=229ED9&center=true&vCenter=true&width=640&lines=Bukan+Cuma+Chat%2C+Tapi+Infrastruktur;Storage+Unlimited+Gratis;Bot+%3D+Backend+%2B+CRM+%2B+Notifikasi;Bangun+Bisnis+Modal+Rp+0" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1000&color=229ED9&center=true&vCenter=true&width=640&lines=Bukan+Cuma+Chat%2C+Tapi+Infrastruktur;Penyimpanan+File+Eksperimental;Bot+%3D+Backend+%2B+CRM+%2B+Notifikasi;Bangun+Bisnis+Modal+Rp+0" alt="Typing SVG" />
 </p>
 
-Kumpulan *library*, *bot framework*, template, dan proyek *open-source* terbaik yang menjadikan **Telegram sebagai infrastruktur gratis** — bukan sekadar aplikasi chat, tapi *backend*, *storage*, CDN, CRM, dan gateway notifikasi bermodal Rp 0.
+Kumpulan *library*, *bot framework*, template, dan proyek *open-source* terbaik yang menjadikan **Telegram sebagai lapisan komunikasi berbiaya rendah** — bukan sekadar aplikasi chat, tapi webhook, penyimpanan file berbasis platform, CRM ringan, dan gateway notifikasi bermodal Rp 0.
 Dibangun untuk solopreneur & developer Indonesia, di mana Telegram sudah jadi napas sehari-hari.
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
@@ -19,11 +19,15 @@ Dibangun untuk solopreneur & developer Indonesia, di mana Telegram sudah jadi na
 
 </div>
 
+> **Audit:** Terakhir diverifikasi **2026-07-15**. Kuota dan kebijakan dapat berubah; cek [sumber resmi](https://core.telegram.org/bots/faq) sebelum implementasi.
+>
+> **Disclaimer:** Proyek komunitas independen. Tidak berafiliasi dengan atau didukung oleh Telegram. Telegram dan logonya merupakan merek dagang pemiliknya. Patuhi Bot API Terms dan hindari spam/userbot abuse.
+
 > 🗺️ **Bagian dari seri [Stack Nol Rupiah](https://github.com/ridloabelian/awesome-rp0-id)** — peta lengkap bootstrap gratisan Rp 0 untuk indie hacker Indonesia.
 
 > 🔗 **Seri saudara:** [**Kitab Cloudflare**](https://github.com/ridloabelian/awesome-cloudflare-id) (edge/web) · [**Kitab Google**](https://github.com/ridloabelian/awesome-google-free-id) (automasi bisnis) · [**Kitab Supabase**](https://github.com/ridloabelian/awesome-supabase-id) (database/auth). **Telegram melengkapi semuanya sebagai lapisan komunikasi, notifikasi, & storage gratis.**
 
-Telegram Bot API **100% gratis tanpa batas**, dan setiap akun mendapat penyimpanan file praktis tak terbatas. Kombinasi ini bikin Telegram jadi "cheat code" infrastruktur: bot bisa jadi *backend* & CRM, channel jadi CMS, dan file API jadi CDN gambar gratis. Cocok banget untuk pasar Indonesia yang aktivitas bisnisnya banyak berpusat di chat.
+Telegram Bot API dapat digunakan gratis dengan **rate limit platform**, sementara file Telegram dapat membantu penyimpanan/pengiriman file non-kritis. Kombinasi ini berguna untuk webhook, CRM ringan, publikasi channel, dan notifikasi — tetapi bukan pengganti database atau object storage produksi. Cocok banget untuk pasar Indonesia yang aktivitas bisnisnya banyak berpusat di chat.
 
 **Kriteria Kurasi:**
 - Menjadikan Telegram sebagai *tools* produktivitas, backend, atau infrastruktur.
@@ -31,16 +35,19 @@ Telegram Bot API **100% gratis tanpa batas**, dan setiap akun mendapat penyimpan
 - *Open-source* dan idealnya masih aktif di-*maintain*.
 - Relevan untuk solopreneur & developer Indonesia.
 
+
+**Status kurasi:** `Official` = dikelola vendor/organisasi resmi · `Community` = proyek komunitas · `Experimental` = contoh/POC, audit sebelum produksi · `Archived` = read-only/tidak aktif. Lihat [audit katalog lengkap](CATALOG_AUDIT.md) (status, stars, last push, dan sumber README upstream; diverifikasi 2026-07-15).
+
 ---
 
 ## 💰 Kenapa Telegram = Infra Rp 0?
 
 | Kapabilitas | Bagaimana | Batas |
 |-------------|-----------|-------|
-| **Bot API** | Backend, webhook, command, inline | Gratis total, tanpa kuota resmi |
-| **Storage File** | Kirim file ke bot/channel/"Saved Messages" | Praktis unlimited; 2 GB/file (4 GB via MTProto) |
-| **CDN Gambar** | `getFile` menghasilkan URL publik CDN Telegram | Gratis |
-| **CRM / Database** | Simpan data di channel privat / pesan | Gratis (untuk skala kecil-menengah) |
+| **Bot API** | Webhook, command, inline | Gratis dengan [rate limit resmi](https://core.telegram.org/bots/faq#my-bot-is-hitting-limits-how-do-i-avoid-this) |
+| **Penyimpanan file** | Kirim file ke bot/channel | Tunduk pada batas ukuran, akun, dan kebijakan Telegram; tanpa SLA storage |
+| **Distribusi file** | `getFile` untuk pengambilan oleh backend | URL mengandung token bot; wajib diproksi, jangan dipublikasikan |
+| **CRM ringan / log** | Pesan privat sebagai append-only log | Eksperimental; bukan database, tanpa query/transaksi/SLA |
 | **CMS** | Channel + Instant View sebagai publikasi | Gratis |
 | **Notifikasi** | Push alert instan ke HP via bot | Gratis, realtime |
 | **Mini Apps** | Web app penuh di dalam Telegram | Gratis (hosting sendiri) |
@@ -90,20 +97,20 @@ Deploy bot tanpa server/VPS — jalan di Cloudflare Workers, benar-benar gratis 
 | [tuanpb99/cf-worker-telegram](https://github.com/tuanpb99/cf-worker-telegram) ![](https://img.shields.io/github/stars/tuanpb99/cf-worker-telegram?style=flat&label=%E2%98%85&color=229ED9) | Cloudflare Worker sebagai *proxy transparan* untuk Telegram Bot API — berguna jika API Telegram terblokir di suatu wilayah. |
 | [telegrambotindonesia/GAS-Lib-v3](https://github.com/telegrambotindonesia/GAS-Lib-v3) ![](https://img.shields.io/github/stars/telegrambotindonesia/GAS-Lib-v3?style=flat&label=%E2%98%85&color=229ED9) | Library Google Apps Script untuk Bot API buatan komunitas Indonesia. Bikin bot gratis di Apps Script tanpa VPS. |
 
-## 💾 Telegram sebagai Storage & Drive
-Ubah akun Telegram menjadi cloud storage tak terbatas — pengganti Google Drive/Dropbox.
+## 💾 Penyimpanan File Berbasis Telegram (Eksperimental)
+Eksperimen memanfaatkan file Telegram sebagai penyimpanan non-kritis. **Bukan pengganti Drive/S3/R2**, tidak memiliki SLA, dan tunduk pada kebijakan platform.
 
 | Nama | Deskripsi |
 |------|-----------|
 | [caamer20/Telegram-Drive](https://github.com/caamer20/Telegram-Drive) ![](https://img.shields.io/github/stars/caamer20/Telegram-Drive?style=flat&label=%E2%98%85&color=229ED9) | Ubah akun Telegram menjadi *cloud storage* aman tak terbatas dengan antarmuka layaknya Drive. Open-source. |
 | [ebinxavier/telegramCloudStorage](https://github.com/ebinxavier/telegramCloudStorage) ![](https://img.shields.io/github/stars/ebinxavier/telegramCloudStorage?style=flat&label=%E2%98%85&color=229ED9) | Alternatif Google Drive berbasis Telegram — upload & kelola file memanfaatkan storage Telegram. |
 
-## 🖼️ Telegram sebagai CDN Gambar
-Host gambar gratis tanpa batas bandwidth memanfaatkan CDN Telegram/Telegraph.
+## 🖼️ Distribusi Gambar via Proxy Aman
+Distribusikan gambar melalui backend/proxy yang menyembunyikan token. Jangan gunakan URL Bot API bertoken sebagai URL publik.
 
 | Nama | Deskripsi |
 |------|-----------|
-| [missuo/Telegraph-Image-Hosting](https://github.com/missuo/Telegraph-Image-Hosting) ![](https://img.shields.io/github/stars/missuo/Telegraph-Image-Hosting?style=flat&label=%E2%98%85&color=229ED9) | Bangun *image hosting* gratis memanfaatkan Telegraph (layanan Telegram). Tanpa batas, cocok untuk aset web. |
+| [missuo/Telegraph-Image-Hosting](https://github.com/missuo/Telegraph-Image-Hosting) ![](https://img.shields.io/github/stars/missuo/Telegraph-Image-Hosting?style=flat&label=%E2%98%85&color=229ED9) | Bangun *image hosting* berbasis Telegraph (layanan Telegram). Tunduk pada batas dan kebijakan platform, cocok untuk aset web. |
 
 ## 🤖 Bot AI (ChatGPT/Gemini)
 Jadikan bot Telegram sebagai antarmuka AI pribadi Anda.
@@ -144,14 +151,18 @@ curl -s "https://api.telegram.org/bot<TOKEN>/sendMessage" \
 # https://api.telegram.org/bot<TOKEN>/getUpdates  -> lihat field "chat":{"id":...}
 ```
 
-### 2. Telegram sebagai CDN Gambar (upload → URL publik)
+### 2. Pengambilan File via Proxy Aman (token tetap rahasia)
 ```bash
-# Upload gambar ke bot, dapat file_id
-curl -s "https://api.telegram.org/bot<TOKEN>/sendPhoto" \
-  -F chat_id="<CHAT_ID>" -F photo=@"gambar.jpg"
-# Response berisi "file_id". Lalu tukar jadi URL CDN:
-# 1) https://api.telegram.org/bot<TOKEN>/getFile?file_id=<FILE_ID>  -> dapat "file_path"
-# 2) URL publik CDN: https://api.telegram.org/file/bot<TOKEN>/<file_path>
+# Backend mengambil file_path dengan TOKEN yang disimpan sebagai secret:
+curl -s "https://api.telegram.org/bot<TOKEN>/getFile?file_id=<FILE_ID>"
+
+# PENTING: endpoint file Telegram mengandung BOT_TOKEN.
+# Jangan pernah kirim URL tersebut ke browser/user atau menyimpannya di HTML/log publik.
+# Buat endpoint proxy Cloudflare Worker/server Anda sendiri yang:
+# 1) menerima ID internal yang sudah divalidasi,
+# 2) mengambil file dengan TOKEN dari secret/env,
+# 3) mengalirkan bytes ke pengguna,
+# 4) menerapkan auth, allowlist, rate limit, dan cache bila diperlukan.
 ```
 
 ### 3. Bot Sederhana di Cloudflare Worker (webhook, Rp 0)
@@ -175,10 +186,10 @@ export default {
 };
 ```
 
-### 4. Telegram sebagai Database Sederhana (channel privat)
+### 4. Channel sebagai Append-only Log Eksperimental (bukan database)
 ```javascript
-// Simpan "record" sebagai pesan JSON di channel privat (bot harus jadi admin channel).
-// Cocok untuk log, antrian, atau data kecil yang tidak sensitif.
+// Hanya untuk log non-kritis/eksperimen. Jangan gunakan untuk PII, transaksi, antrean, atau source of truth.
+// Untuk data aplikasi gunakan D1, Supabase, PostgreSQL, atau database lain yang punya query, backup, dan SLA.
 async function simpanData(token, channelId, data) {
   await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
     method: 'POST',
@@ -186,7 +197,7 @@ async function simpanData(token, channelId, data) {
     body: JSON.stringify({ chat_id: channelId, text: JSON.stringify(data) })
   });
 }
-// Baca kembali via getUpdates / getChatHistory (MTProto) lalu JSON.parse tiap pesan.
+// Jangan bergantung pada getUpdates sebagai mekanisme pembacaan database/riwayat permanen.
 ```
 
 ---
