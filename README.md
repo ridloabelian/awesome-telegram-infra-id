@@ -145,6 +145,7 @@ Pola paling umum untuk memakai Telegram sebagai infra. Buat bot via [@BotFather]
 # Paling sederhana: alert dari server/cron/CI ke Telegram Anda. Ganti TOKEN & CHAT_ID.
 curl -s "https://api.telegram.org/bot<TOKEN>/sendMessage" \
   -d chat_id="<CHAT_ID>" \
+- [Tiny Telegram Tools](https://tg.zovo.one) — 22 single-purpose Telegram bots: anonymous inbox, party games, expense splitter, habit tracker, reminders, focus timer, and more.
   -d text="🔔 Deploy sukses! Server online ✅"
 
 # Cara dapat CHAT_ID: kirim pesan ke bot Anda, lalu buka:
